@@ -8,6 +8,6 @@ Currently only contains a <a href="https://developers.arcgis.com/survey123/api-r
 
 ### Feature Report API Sample
 
-URL: https://zachary-sutherby.github.io/?objectId=ObjectID&token=accessToken
+URL: https://mattrgers.github.io/Survey123-Report/?objectId=ObjectID&token=accessToken
 
 Deploy to web server as needed, the sample will need to be updated with your own Feature Service REST URL's, survey item ID, and report template ID. The sample takes 2 URL parameters `objectId` and `token` both are used in the API calls that are sent. 
