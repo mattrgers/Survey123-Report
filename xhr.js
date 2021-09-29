@@ -32,12 +32,12 @@ const sendHttpRequest = (method, url, data) => {
 
 const estimate = () => {
   let params = new URLSearchParams(document.location.search.substring(1));
-  let oid = parseInt(params.get("objectId"));
+  let oid = parseInt(params.get("objectIds"));
   let token = params.get("token");
   console.log(oid);
   console.log(token);
   
-  sendHttpRequest('GET', 'https://survey123.arcgis.com/api/featureReport/estimateCredits?featureLayerUrl=https://services2.arcgis.com/p0kPTvyvhLmiT5Ha/arcgis/rest/services/service_5a757ca8dbcc462bbaeb29b1bcfe5c96/FeatureServer&queryParameters={"where": "objectId='+oid+'"}&templateItemId=ae32b9999eb641f284cc0a1cd68deed7&token='+token).then(responseData => {
+  sendHttpRequest('GET', 'https://survey123.arcgis.com/api/featureReport/estimateCredits?featureLayerUrl=https://services2.arcgis.com/p0kPTvyvhLmiT5Ha/arcgis/rest/services/service_5a757ca8dbcc462bbaeb29b1bcfe5c96/FeatureServer&queryParameters={"where": "objectIds='+oid+'"}&templateItemId=ae32b9999eb641f284cc0a1cd68deed7&token='+token).then(responseData => {
 	console.log(responseData['resultInfo'].cost);
 	//return responseData['resultInfo'].cost
 	document.getElementById("estimate_credits").innerHTML = "Estimated credit cost: " + responseData['resultInfo'].cost;
@@ -49,13 +49,13 @@ const estimate = () => {
 
 const createReport = () => {
 	let params = new URLSearchParams(document.location.search.substring(1));
-	let oid = parseInt(params.get("objectId"));
+	let oid = parseInt(params.get("objectIds"));
 	let token = params.get("token");
 	console.log(oid);
 	console.log(token);
 	sendHttpRequest('POST', 'https://survey123.arcgis.com/api/featureReport/createReport/submitJob', {
 	featureLayerUrl: 'https://services2.arcgis.com/p0kPTvyvhLmiT5Ha/arcgis/rest/services/service_5a757ca8dbcc462bbaeb29b1bcfe5c96/FeatureServer',
-	queryParameters: '{"where":"objectId=' + oid + '","orderByFields":"||EditDate DESC, objectid ASC"}',
+	queryParameters: '{"where":"objectIds=' + oid + '","orderByFields":"||EditDate DESC, objectid ASC"}',
 	templateItemId: 'ae32b9999eb641f284cc0a1cd68deed7',
 	token: token,
 	surveyItemId: 'f3ea2f243afa45d68d0f2d235ebecc4b',
