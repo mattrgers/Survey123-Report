@@ -32,7 +32,7 @@ const sendHttpRequest = (method, url, data) => {
 
 const estimate = () => {
   let params = new URLSearchParams(document.location.search.substring(1));
-  let oid = parseInt(params.get("objectId"));
+  let oid = parseInt(params.get("objectid"));
   let token = params.get("TKS");
   console.log(oid);
   console.log(token);
@@ -49,7 +49,7 @@ const estimate = () => {
 
 const createReport = () => {
 	let params = new URLSearchParams(document.location.search.substring(1));
-	let oid = parseInt(params.get("objectId"));
+	let oid = parseInt(params.get("objectid"));
 	let token = params.get("TKS");
 	console.log(oid);
 	console.log(token);
