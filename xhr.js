@@ -37,7 +37,7 @@ const estimate = () => {
   console.log(oid);
   console.log(token);
   
-  sendHttpRequest('GET', 'https://survey123.arcgis.com/api/featureReport/estimateCredits?featureLayerUrl=https://services2.arcgis.com/p0kPTvyvhLmiT5Ha/arcgis/rest/services/service_5a757ca8dbcc462bbaeb29b1bcfe5c96/FeatureServer&queryParameters={"where": "objectId='+oid+'"}&templateItemId=ae32b9999eb641f284cc0a1cd68deed7&token=token).then(responseData => {
+  sendHttpRequest('GET', 'https://survey123.arcgis.com/api/featureReport/estimateCredits?featureLayerUrl=https://services2.arcgis.com/p0kPTvyvhLmiT5Ha/arcgis/rest/services/service_5a757ca8dbcc462bbaeb29b1bcfe5c96/FeatureServer&queryParameters={"where": "objectId='+oid+'"}&templateItemId=ae32b9999eb641f284cc0a1cd68deed7&token='+token).then(responseData => {
 	console.log(responseData['resultInfo'].cost);
 	//return responseData['resultInfo'].cost
 	document.getElementById("estimate_credits").innerHTML = "Estimated credit cost: " + responseData['resultInfo'].cost;
