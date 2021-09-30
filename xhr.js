@@ -33,7 +33,7 @@ const sendHttpRequest = (method, url, data) => {
 const estimate = () => {
   let params = new URLSearchParams(document.location.search.substring(1));
   let oid = parseInt(params.get("objectId"));
-  let token = params.get("token");
+  let token = params.get("TKS");
   console.log(oid);
   console.log(token);
   
@@ -50,7 +50,7 @@ const estimate = () => {
 const createReport = () => {
 	let params = new URLSearchParams(document.location.search.substring(1));
 	let oid = parseInt(params.get("objectId"));
-	let token = params.get("token");
+	let token = params.get("TKS");
 	console.log(oid);
 	console.log(token);
 	sendHttpRequest('POST', 'https://survey123.arcgis.com/api/featureReport/createReport/submitJob', {
