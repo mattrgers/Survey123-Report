@@ -57,7 +57,7 @@ const createReport = () => {
 	featureLayerUrl: 'https://services2.arcgis.com/p0kPTvyvhLmiT5Ha/arcgis/rest/services/service_5a757ca8dbcc462bbaeb29b1bcfe5c96/FeatureServer',
 	queryParameters: '{"objectIds"=' + oid + '}',
 	templateItemId: 'ae32b9999eb641f284cc0a1cd68deed7',
-	token: token,
+	token: 'token',
 	surveyItemId: 'f3ea2f243afa45d68d0f2d235ebecc4b',
 	outputFormat: 'docx'
 	})
